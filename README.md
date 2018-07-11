@@ -1,4 +1,4 @@
-To readers: If you are reading this NOW (last update 11th July 2018). Works still on going, and commits might be incomplete. 
+Dear readers: If you are reading this NOW (last update 11th July 2018). Works still on going, and commits might be incomplete. 
 
 # Clothes-recognition
 Clothes recognition: This is a task given by a company as part of the interview process for an internship role, and deadline is 1 week (17July2018). Due to time constraint, I'm going to tackle this using a few techniques I have already know, since I have ready codes, as baseline. Then if I have more time, I will try out something I don't know, i.e fashionet, based on a paper dated 2016.
