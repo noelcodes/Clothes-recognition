@@ -42,4 +42,4 @@ Epoch 200/200: 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - 
 
 - 11July : Transfer learning VGG16 - another baseline
 
-- 11July : Clean up dataset - some images really sucks
+- 11July : Clean up dataset - I wondered, train accuracy has been quite good like 0.9. There are duplicated images in dataset, but having an extra border. I think it might be a good idea to move all bordered images as validation folder, leaving non-border images as train folder. Test folder will have both type.  
