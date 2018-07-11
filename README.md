@@ -14,12 +14,7 @@ Expected Results
 
 Requirements, Constraints and Hints
 ·   The trained model should be robust to viewing angle on a person and different camera.
-·   An example of dataset for type of cloth with label can be found below:
-     https://xrvisionpteltd-my.sharepoint.com/:u:/g/personal/ralphlee_xrvision_com/EfDOV4KjNNpElb7GMG_rOcABFvBRiI_n2JkqzRi_P4MvXQ?e=IFdVb2
- 
-	
-trainClothAttribute
-Shared via OneDrive
+.   Dataset link is confidential (sorry guys)
 ·   For your information, the label in the above dataset contains the location of the cloth and its type in their respective images in xml format.
 ·   If you felt these dataset is not suitable for your test case or you need more data to make the model more accurate, you can use other material in the internet for open source dataset.
 ·   The targeted accuracy would be at least 90% in determining the type of the cloth.
