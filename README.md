@@ -1,7 +1,7 @@
 Dear readers: If you are reading this NOW (last update 11th July 2018). Works still on going, and commits might be incomplete. 
 
 # Clothes-recognition
-Clothes recognition: This is a task given by a company as part of the interview process for an internship role, and deadline is 1 week (17July2018). Due to time constraint, I'm going to tackle this using a few techniques I have already know, since I have ready codes, as baseline. Then if I have more time, I will try out something I don't know, i.e fashionet, based on a paper dated 2016.
+Clothes recognition: This is a task given by a company as part of the interview process for an internship role, and deadline is 1 week (17July2018). 
 
 ## Task details: Copy paste directly from email.
 ```
@@ -31,7 +31,7 @@ Your assignment ranking will be based on the robustness and generalization of th
 ```
 
 ## Plan of attack
-I have 1 week to do this. After reading [DeepFashion paper ](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf), I knew a simple CNN and any transfer learning models is NOT going to give any good result. However its the only few methods I know for now. And I have codes ready for testing. So I went ahead, at least I have some results to show before deadline.
+I have 1 week to do this. After reading [DeepFashion / Fashionet paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf), I knew a simple CNN and any transfer learning models is NOT going to give any good result. However its the only few methods I know for now. And I have codes ready for testing. Due to time constraint, I'm going to tackle this using a few techniques I have already know, since I have ready codes, as baseline. Then if I have more time, I will try out something I don't know, i.e [Fashionet, based on a paper dated LiuZhiWei](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf).
 
 ### Timeline: (I am updating this as I move along)
 - 9July: Researching. Looking at Github, youtube, blogs, papers. Problem is  First, clothes often have large variations in style, texture, and cutting, which confuse existing systems. Second, clothing items are frequently subject to deformation and occlusion. Third, clothing images often exhibit serious variations when they are taken under different scenarios, such as selfies vs. online shopping
@@ -40,6 +40,6 @@ photos
 - 11July : For 1st baseline. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 Epoch 200/200: 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
 
-- 11July : Transfer learning VGG16 - another baseline
+- 11July : Transfer learning VGG16 - 2nd baseline
 
-- 11July : Clean up dataset - I wondered, train accuracy has been quite good like 0.9. There are duplicated images in dataset, but having an extra border. I think it might be a good idea to move all bordered images as validation folder, leaving non-border images as train folder. Test folder will have both type.  
+- 11July : Clean up dataset - I wondered, train accuracy has been quite good like 0.9. There are duplicated images in dataset, but having an extra border. I think it might be a good idea to move all bordered images as validation folder, leaving non-border images as train folder. Test folder will have both type. The idea is, the CNN might be able to be better trained when trying to validate same images with borders.
