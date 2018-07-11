@@ -38,8 +38,14 @@ I have 1 week to do this. After reading [DeepFashion / Fashionet paper](https://
 photos 
 - 10July : Looking at dataset. It comes with xml annotation and jpg. But not sure what .txt file is for. Spend a bit of time moving to respective classes to its folder names [shorts','dress','tee','jeans','skirt','blouse'], as Keras requirement.
 - 11July : For 1st baseline. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
-Epoch 200/200: 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
+```
+Epoch 200/200: 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589 
+```
 
-- 11July : Transfer learning VGG16 - 2nd baseline
+- 11July : Transfer learning VGG16 - 2nd baseline. I terminated training halfway, due to bad accuracy. [Juypter notebook: VGG16](https://github.com/noelcodes/Clothes-recognition/blob/master/VGG16%20-%20baseline.ipynb)
+```
+Epoch 113/200
+182/182 [==============================] - 43s 236ms/step - loss: 1.3257 - acc: 0.3171 - val_loss: 1.2433 - val_acc: 0.3304 
+```
 
-- 11July : Clean up dataset - I wondered, train accuracy has been quite good like 0.9. There are duplicated images in dataset, but having an extra border. I think it might be a good idea to move all bordered images as validation folder, leaving non-border images as train folder. Test folder will have both type. The idea is, the CNN might be able to be better trained when trying to validate same images with borders.
+- 11July : Clean up dataset - I wondered, train accuracy has been quite good like 0.9. There are duplicated images in dataset, but having an extra border. I think it might be a good idea to move all bordered images as validation folder, leaving non-border images as train folder. Test folder will have both type. The idea is, the CNN might be able to be better train when trying to validate same images with borders.
