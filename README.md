@@ -31,6 +31,14 @@ Your assignment ranking will be based on the robustness and generalization of th
 ```
 
 ## Plan of attack
-I have 1 week to do this. The general idea is this. After reading DeepFashion paper 
+I have 1 week to do this. After reading [DeepFashion paper ](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf), I knew a simple CNN and any transfer learning models is NOT going to give any good result. However its the only few methods I know for now. And I have codes ready for testing. So I went ahead, at least I have some results to show before deadline.
 
-https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf
+### Timeline: (I am updating this as I move along)
+- 9July: Researching. Looking at Github, youtube, blogs, papers. Problem is  First, clothes often have large variations in style, texture, and cutting, which confuse existing systems. Second, clothing items are frequently subject to deformation and occlusion. Third, clothing images often exhibit serious variations when they are taken under different scenarios, such as selfies vs. online shopping
+photos 
+- 10July : Looking at dataset. It comes with xml annotation and jpg. But not sure what .txt file is for. Spend a bit of time moving to respective classes to its folder names [shorts','dress','tee','jeans','skirt','blouse'], as Keras requirement.
+- 11July : Custom CNN using Keras - for baseline.
+Epoch 200/200: 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
+[Juypter notebook on this: Custom CNN via Keras](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf)
+2) Transfer learning VGG16 - another baseline
+3) Clean up dataset - some images really sucks
