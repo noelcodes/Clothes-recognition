@@ -37,11 +37,8 @@ I have 1 week to do this. After reading [DeepFashion paper ](https://www.cv-foun
 - 9July: Researching. Looking at Github, youtube, blogs, papers. Problem is  First, clothes often have large variations in style, texture, and cutting, which confuse existing systems. Second, clothing items are frequently subject to deformation and occlusion. Third, clothing images often exhibit serious variations when they are taken under different scenarios, such as selfies vs. online shopping
 photos 
 - 10July : Looking at dataset. It comes with xml annotation and jpg. But not sure what .txt file is for. Spend a bit of time moving to respective classes to its folder names [shorts','dress','tee','jeans','skirt','blouse'], as Keras requirement.
-- 11July : Custom CNN using Keras - for baseline. 
-
+- 11July : For 1st baseline. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 Epoch 200/200: 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
-
-[Juypter notebook on this: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 
 - 11July : Transfer learning VGG16 - another baseline
 
