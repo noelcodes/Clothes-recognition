@@ -41,7 +41,7 @@ photos
 
 Epoch 200/200: 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
 
-[Juypter notebook on this: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20-%20Clothes%20recognition%20task.ipynb)
+[Juypter notebook on this: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 
 - 11July : Transfer learning VGG16 - another baseline
 
