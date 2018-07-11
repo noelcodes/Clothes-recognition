@@ -49,4 +49,4 @@ Epoch 113/200
 182/182 [==============================] - 43s 236ms/step - loss: 1.3257 - acc: 0.3171 - val_loss: 1.2433 - val_acc: 0.3304 
 ```
 
-- 11July : Clean up dataset - I wondered, train accuracy has been quite good like 0.9. There are duplicated images in dataset, but having an extra border. I think it might be a good idea to move all bordered images as validation folder, leaving non-border images as train folder. Test folder will have both type. The idea is, the CNN might be able to be better train when trying to validate same images with borders.
+- 11July : Preparing images to be train on Faster-RCNN. Weights are in inference_graph. The only method I know to how to create such model is thru Google's Tensorflow Object Detection API. This requires XML files, which the dataset originally has provided. However, very strange that the API rejects the xml. Troubleshooting script to convert xml_to_csv.  
