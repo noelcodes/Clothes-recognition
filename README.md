@@ -48,9 +48,8 @@ I will train in total 3x separate model. (1) A binary model to classify 2x class
 Epoch 200/200
 184/184 [==============================] - 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
 ```
-![alt text](https://i.imgur.com/17KwF0Z.jpg)
-![alt text](https://i.imgur.com/jrxKZAz.jpg)
-There is definately something wrong with my confusion matrix, this does not look like having a val_acc 0.7589. 
+
+There is definitely something wrong with my confusion matrix, this does not look like having a val_acc 0.7589. 
 
 - Baseline 2 : Transfer learning VGG16 - 2nd baseline. I terminated training halfway, due to bad accuracy. No point continuing. [Juypter notebook: VGG16](https://github.com/noelcodes/Clothes-recognition/blob/master/VGG16%20-%20baseline.ipynb)
 ```
@@ -58,7 +57,13 @@ Epoch 113/200
 182/182 [==============================] - 43s 236ms/step - loss: 1.3257 - acc: 0.3171 - val_loss: 1.2433 - val_acc: 0.3304 
 ```
 
-- Model 1 : Preparing images to be train on Faster-RCNN. Weights are in inference_graph. The only method I know to how to create such model is thru Google's Tensorflow Object Detection API. This requires XML files, which the dataset originally has provided. However, very strange that the API rejects the xml. Troubleshooting script to convert xml_to_csv.  
-- 12July : Morning going for job interview for another company.
-- 12July : Back to work. Decided to ditch Google's Tensorflow Object Detection API method. I have an idea.
+- I was thinking of using Google's Tensorflow Object Detection API + train on Faster-RCNN, since it requires XML files, which the dataset has provided. However, very strange that the API rejects the xml. Script to convert xml_to_csv always error out. So decided to ditch the idea. 
+- Due to failure of VGG16, I will use custom designed CNN to train the 3 models below.
 
+- Train Model 1 : This binary model_1 will classify [Upper,Lower]. Dataset had to be rearrange respectively, all dress,tee,blouse pictures in 'upper' folder, all jeans, shorts, skirt into 'lower' folder.
+- Train Model 2 : This categorical model_2 will classify [jeans, shorts, skirt].
+- Train Model 3 : This categorical model_3 will classify [dress,tee,blouse].
+- Combine_cnn: Here we will call model1, if new test image classified lower then load model2 to classify if its [jeans, shorts, skirt], else call model_3 to classify [dress,tee,blouse].
+
+#### Conclusion
+Hi Ralph, all 3x models did not perform well, therefore have low accuracy. OK, I know the above is a little dumb. If I have experience working on attributes + coding complex CNN, and have enough time for research, I should be able to produce similar result as FashionNet. In the email, I have explained why I had to submit this project now. Hope you understand my situation. Thank you for considering my application. Hope to work with you soon.
