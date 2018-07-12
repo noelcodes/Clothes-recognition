@@ -69,8 +69,9 @@ Epoch 150/150
 ```
 
 - Train Model 2 : [Juypter: model2](https://github.com/noelcodes/Clothes-recognition/blob/master/model2_lower.ipynb). This categorical model_2 will classify [jeans, shorts, skirt]. Dataset rearranged too.
+```
 Epoch 500/500
-73/73 [=====1=================] - 9s 129ms/step - loss: 0.2313 - acc: 0.9097 - val_loss: 4.5684 - val_acc: 0.3021
+73/73 [======================] - 9s 129ms/step - loss: 0.2313 - acc: 0.9097 - val_loss: 4.5684 - val_acc: 0.3021
 ```
 - Train Model 3 : [Juypter: model3](https://github.com/noelcodes/Clothes-recognition/blob/master/model3_upper.ipynb). This categorical model_3 will classify [dress,tee,blouse]. 
 
