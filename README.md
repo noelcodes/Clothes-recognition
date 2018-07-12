@@ -62,6 +62,11 @@ Epoch 113/200
 - Due to failure of VGG16, I will use custom designed CNN to train the 3 models below.
 
 - Train Model 1 : [Juypter: model1](https://github.com/noelcodes/Clothes-recognition/blob/master/model1_upper_lower.ipynb). This binary model_1 will classify [Upper,Lower]. Dataset had to be rearrange respectively, all dress,tee,blouse pictures in 'upper' folder, all jeans, shorts, skirt into 'lower' folder. 
+```
+Epoch 150/150
+166/166 [==============================] - 17s 104ms/step - loss: 0.0589 - acc: 0.9804 - val_loss: 0.1301 - val_acc: 0.9601
+
+```
 
 - Train Model 2 : [Juypter: model2](https://github.com/noelcodes/Clothes-recognition/blob/master/model2_lower.ipynb). This categorical model_2 will classify [jeans, shorts, skirt]. Dataset rearranged too.
 
