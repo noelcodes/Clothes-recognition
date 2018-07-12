@@ -46,7 +46,7 @@ I will train in total 3x separate model. (1) A binary model to classify 2x class
 - Baseline 1. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 ```
 Epoch 200/200
-184/184 [==============================] - 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
+184/184 [=====================] - 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
 ```
 
 There is definitely something wrong with my confusion matrix, this does not look like having a val_acc 0.7589. 
@@ -54,7 +54,7 @@ There is definitely something wrong with my confusion matrix, this does not look
 - Baseline 2 : Transfer learning VGG16. I terminated training halfway, due to bad accuracy. No point continuing. [Juypter notebook: VGG16](https://github.com/noelcodes/Clothes-recognition/blob/master/VGG16%20-%20baseline.ipynb)
 ```
 Epoch 113/200
-182/182 [==============================] - 43s 236ms/step - loss: 1.3257 - acc: 0.3171 - val_loss: 1.2433 - val_acc: 0.3304 
+182/182 [=====================] - 43s 236ms/step - loss: 1.3257 - acc: 0.3171 - val_loss: 1.2433 - val_acc: 0.3304 
 ```
 
 - I know another technique via Google's Tensorflow Object Detection API + to train on Faster-RCNN, since it requires using XML files, which the dataset has provided. However, very strange that the API rejects the xml. Script to convert xml_to_csv always error out. So decided to ditch the idea. 
