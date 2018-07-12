@@ -61,13 +61,13 @@ Epoch 113/200
 
 - Due to failure of VGG16, I will use custom designed CNN to train the 3 models below.
 
-- Train Model 1 : This binary model_1 will classify [Upper,Lower]. Dataset had to be rearrange respectively, all dress,tee,blouse pictures in 'upper' folder, all jeans, shorts, skirt into 'lower' folder. [Juypter notebook: model1](https://github.com/noelcodes/Clothes-recognition/blob/master/model1_upper_lower.ipynb)
+- Train Model 1 : [Juypter: model1](https://github.com/noelcodes/Clothes-recognition/blob/master/model1_upper_lower.ipynb). This binary model_1 will classify [Upper,Lower]. Dataset had to be rearrange respectively, all dress,tee,blouse pictures in 'upper' folder, all jeans, shorts, skirt into 'lower' folder. 
 
-- Train Model 2 : This categorical model_2 will classify [jeans, shorts, skirt]. [Juypter notebook: model2](https://github.com/noelcodes/Clothes-recognition/blob/master/model2_lower.ipynb)
+- Train Model 2 : [Juypter: model2](https://github.com/noelcodes/Clothes-recognition/blob/master/model2_lower.ipynb). This categorical model_2 will classify [jeans, shorts, skirt]. Dataset rearranged too.
 
-- Train Model 3 : This categorical model_3 will classify [dress,tee,blouse]. [Juypter notebook: model3](https://github.com/noelcodes/Clothes-recognition/blob/master/model3_upper.ipynb)
+- Train Model 3 : [Juypter: model3](https://github.com/noelcodes/Clothes-recognition/blob/master/model3_upper.ipynb). This categorical model_3 will classify [dress,tee,blouse]. 
 
-- Combine_cnn: Here we will call model1, if new test image classified lower then load model2 to classify if its [jeans, shorts, skirt], else call model_3 to classify [dress,tee,blouse]. [Juypter notebook: combine_cnn](https://github.com/noelcodes/Clothes-recognition/blob/master/combine_cnn.ipynb)
+- Combine_cnn:  [Juypter: combine_cnn](https://github.com/noelcodes/Clothes-recognition/blob/master/combine_cnn.ipynb). Here we will call model1, if new test image classified lower then load model2 to classify if its [jeans, shorts, skirt], else call model_3 to classify [dress,tee,blouse].
 
 #### Conclusion
 Hi Ralph, all 3x models did not perform well, therefore have low accuracy. OK, I know the above is a little dumb. If I have experience working on attributes + coding complex CNN, and have enough time for research, I should be able to produce similar result as FashionNet. In the email, I have explained why I had to submit this project now. Hope you understand my situation. Thank you for considering my application. Hope to work with you soon.
