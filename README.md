@@ -1,4 +1,4 @@
-Dear readers: If you are reading this NOW (last update 11th July 2018). Works still on going, and commits might be incomplete. 
+Dear readers: Please do not follow this code, it did not yield any good result.  
 
 # Clothes-recognition
 Clothes recognition: This is a task given by a company as part of the interview process for an internship role, and deadline is 1 week (17July2018). 
