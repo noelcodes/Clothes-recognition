@@ -1,7 +1,7 @@
 Dear readers: Please do not fork this. it is far from satisfactory. More work need to be done.  
 
 # Clothes-recognition
-This is a task given by a company as part of the interview process for an internship role, and deadline is 1 week (17July2018). I have decided to submit on 12July instead due to other commits following up, hence accuarcy suffers.
+This is a task given by a company as part of the interview process for an internship role, and deadline is 1 week.
 
 ## Task details: Copy paste directly from email.
 ```
