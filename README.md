@@ -39,11 +39,11 @@ Instead of giving up,  I decided to give it a shot using some techniques I know,
 The given Dataset containes 18438 files (i.e 6146 sets of jpg, xml and txt), all in one folder. The filename is one way to recognize its label. XML only has bbox and label info, no segmented info. TXT should be for the landmark attribute, but unsure, since no details written. I have tried looking into dataset from [Deepfashion](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/AttributePrediction.html), but arrangement and landmark details are overwhelming. I have not work on multiple attributes on a single labels before, not sure how to fit into Keras layers. 
 
 ### My General idea: 
-I will train in total 3x separate model. (1) A binary model to classify 2x classes, [Upper and Lower]. (2) A categorical model for 3x classes [dress, blouse, tee] if model 1 predicts class "Upper'. (3)  A categorical model for 3x classes [jeans, shorts, skirt] if model 1 predicts class "Lower'. (Lastly) A separate notebook to do load all 3x model weights, for the conditional prediction mentioned above. Before I start working on the mentioned above, I will just run 1x simple CNN model and 1x VGG16 model over entire dataset, just for baseline. 
+I will train in total 3x separate model. (1) A binary model to classify 2x classes, [Upper and Lower]. (2) A categorical model for 3x classes [dress, blouse, tee] if model 1 predicts class "Upper'. (3)  A categorical model for 3x classes [jeans, shorts, skirt] if model 1 predicts class "Lower'. (Lastly) A separate notebook to load all 3x model weights, for the conditional prediction mentioned above. Before I start working on the mentioned above, I will just run 1x simple CNN model and 1x VGG16 model over entire dataset, just for baseline. 
 
 
 ### Result
-- Baseline 1. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
+- Baseline 1. [Juypter: Custom CNN design](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 ```
 Epoch 200/200
 184/184 [=====================] - 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
@@ -51,13 +51,13 @@ Epoch 200/200
 
 There is definitely something wrong with my confusion matrix, this does not look like having a val_acc 0.7589. 
 
-- Baseline 2 : Transfer learning VGG16. I terminated training halfway, due to bad accuracy. No point continuing. [Juypter notebook: VGG16](https://github.com/noelcodes/Clothes-recognition/blob/master/VGG16%20-%20baseline.ipynb)
+- Baseline 2 : [Juypter: VGG16](https://github.com/noelcodes/Clothes-recognition/blob/master/VGG16%20-%20baseline.ipynb) Transfer learning VGG16. Freeze the top then replace last layer with ours. Unforturnately, I had to terminate training halfway, due to bad accuracy. No point continuing. 
 ```
 Epoch 113/200
 182/182 [=====================] - 43s 236ms/step - loss: 1.3257 - acc: 0.3171 - val_loss: 1.2433 - val_acc: 0.3304 
 ```
 
-- I know another technique via Google's Tensorflow Object Detection API + to train on Faster-RCNN, since it requires using XML files, which the dataset has provided. However, very strange that the API rejects the xml. Script to convert xml_to_csv always error out. So decided to ditch the idea. 
+- I know another technique using Google's Tensorflow Object Detection API + to train on Faster-RCNN, since it requires using XML files, which the dataset has provided. However, very strange that the API rejects the xml. Script to convert xml_to_csv always error out. So decided to ditch the idea. 
 
 - Due to failure of VGG16, I will use custom designed CNN to train the 3 models below.
 
