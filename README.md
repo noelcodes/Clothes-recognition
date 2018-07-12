@@ -36,26 +36,29 @@ I have 1 week to do this. After reading [DeepFashion / FashionNet paper](https:/
 So I'll be using the method I know, with a little tweak in order to come close to FashionNet.
 
 ### Dataset 
-The given dataset do not come with much details. Dataset containes 18438 files (i.e 6146 sets of jpg, xml and txt). Not arrange in folders. XML only has bbox and label info. TXT should be for the attribute landmark, but unsure, since no details written. I have tried looking into dataset [Deepfashion](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/AttributePrediction.html), but arrangement and landmark details are overwhelming. I have not work on multiple attributes on a single labels before, not sure how to fit into Keras. 
+The given dataset do not come with much details. Dataset containes 18438 files (i.e 6146 sets of jpg, xml and txt), all in a single folder. Not arrange in folders. The filename is one way to reconige its class. XML only has bbox and label info, no segmented info. TXT should be for the landmark attribute, but unsure, since no details written. I have tried looking into dataset [Deepfashion](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/AttributePrediction.html), but arrangement and landmark details are overwhelming. I have not work on multiple attributes on a single labels before, not sure how to fit into Keras. 
 
 ### My General idea: 
 I will train in total 3x separate model. (1) A binary model to classify 2x classes, Upper and Lower. (2) A categorical model for 3x classes [dress, blouse, tee] if model 1 predicts class "Upper'. (3)  A categorical model for 3x classes [jeans, shorts, skirt] if model 1 predicts class "Lower'. (Lastly) A separate notebook to do load all 3x model weights, for the conditional prediction mentioned above. Before I start working on the mentioned above, I will just run 1x simple CNN model and 1x VGG16 model over entire dataset, just for baseline. 
 
 
 ### Result
-- For 1st baseline. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
+- Baseline 1. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 ```
 Epoch 200/200
 184/184 [==============================] - 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
 ```
+![alt text](https://i.imgur.com/17KwF0Z.jpg)
+![alt text](https://i.imgur.com/jrxKZAz.jpg)
+There is definately something wrong with my confusion matrix, this does not look like having a val_acc 0.7589. 
 
-- 11July : Transfer learning VGG16 - 2nd baseline. I terminated training halfway, due to bad accuracy. [Juypter notebook: VGG16](https://github.com/noelcodes/Clothes-recognition/blob/master/VGG16%20-%20baseline.ipynb)
+- Baseline 2 : Transfer learning VGG16 - 2nd baseline. I terminated training halfway, due to bad accuracy. No point continuing. [Juypter notebook: VGG16](https://github.com/noelcodes/Clothes-recognition/blob/master/VGG16%20-%20baseline.ipynb)
 ```
 Epoch 113/200
 182/182 [==============================] - 43s 236ms/step - loss: 1.3257 - acc: 0.3171 - val_loss: 1.2433 - val_acc: 0.3304 
 ```
 
-- 11July : Preparing images to be train on Faster-RCNN. Weights are in inference_graph. The only method I know to how to create such model is thru Google's Tensorflow Object Detection API. This requires XML files, which the dataset originally has provided. However, very strange that the API rejects the xml. Troubleshooting script to convert xml_to_csv.  
+- Model 1 : Preparing images to be train on Faster-RCNN. Weights are in inference_graph. The only method I know to how to create such model is thru Google's Tensorflow Object Detection API. This requires XML files, which the dataset originally has provided. However, very strange that the API rejects the xml. Troubleshooting script to convert xml_to_csv.  
 - 12July : Morning going for job interview for another company.
 - 12July : Back to work. Decided to ditch Google's Tensorflow Object Detection API method. I have an idea.
 
