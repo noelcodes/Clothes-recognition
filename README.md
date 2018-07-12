@@ -31,13 +31,19 @@ Your assignment ranking will be based on the robustness and generalization of th
 ```
 
 ## Plan of attack
-I have 1 week to do this. After reading [DeepFashion / Fashionet paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf), I knew a simple CNN and any transfer learning models is NOT going to give any good result. However its the only few methods I know for now. And I have codes ready for testing. Due to time constraint, I'm going to tackle this using a few techniques I have already know, since I have ready codes, as baseline. Then if I have more time, I will try out something I don't know, i.e [FashionNet, based on a paper dated LiuZhiWei](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf). This is because the solution suggested in FashionNet, I have no idea how to code this up within a week.
+I have 1 week to do this. After reading [DeepFashion / FashionNet paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf), I knew a simple CNN and any transfer learning models is NOT going to give any good result. Problem is, First, clothes often have large variations, Second, clothing deforms, Third, clothing images are taken under different scenarios. The solution suggested in FashionNet, which requires several split CNN branches for different attributes then concatenate later. I have not work on multiple attributes on a single label, neither have experience coding complex CNN as FashionNet. Research over github for fashionNet, none are comprehensive, or claims good accuracy. I have also considered Mask-RCNN, but dataset do not have segmentation annotation. 
 
-### Timeline: (I am updating this as I move along)
-- 9July: Researching. Looking at Github, youtube, blogs, papers. Problem is  First, clothes often have large variations in style, texture, and cutting, which confuse existing systems. Second, clothing items are frequently subject to deformation and occlusion. Third, clothing images often exhibit serious variations when they are taken under different scenarios, such as selfies vs. online shopping
-photos 
-- 10July : Looking at dataset. It comes with xml annotation and jpg. But not sure what .txt file is for. Spend a bit of time moving to respective classes to its folder names [shorts','dress','tee','jeans','skirt','blouse'], as Keras requirement.
-- 11July : For 1st baseline. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
+So I'll be using the method I know, with a little tweak in order to come close to FashionNet.
+
+### Dataset 
+The given dataset do not come with much details. Dataset containes 18438 files (i.e 6146 sets of jpg, xml and txt). Not arrange in folders. XML only has bbox and label info. TXT should be for the attribute landmark, but unsure, since no details written. I have tried looking into dataset [Deepfashion](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/AttributePrediction.html), but arrangement and landmark details are overwhelming. I have not work on multiple attributes on a single labels before, not sure how to fit into Keras. 
+
+### My General idea: 
+I will train in total 3x separate model. (1) A binary model to classify 2x classes, Upper and Lower. (2) A categorical model for 3x classes [dress, blouse, tee] if model 1 predicts class "Upper'. (3)  A categorical model for 3x classes [jeans, shorts, skirt] if model 1 predicts class "Lower'. (Lastly) A separate notebook to do load all 3x model weights, for the conditional prediction mentioned above. Before I start working on the mentioned above, I will just run 1x simple CNN model and 1x VGG16 model over entire dataset, just for baseline. 
+
+
+### Result
+- For 1st baseline. [Juypter notebook: Custom CNN via Keras](https://github.com/noelcodes/Clothes-recognition/blob/master/Custom%20CNN%20baseline.ipynb)
 ```
 Epoch 200/200
 184/184 [==============================] - 20s 108ms/step - loss: 0.2652 - acc: 0.9001 - val_loss: 0.9794 - val_acc: 0.7589
