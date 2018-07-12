@@ -51,5 +51,5 @@ Epoch 113/200
 
 - 11July : Preparing images to be train on Faster-RCNN. Weights are in inference_graph. The only method I know to how to create such model is thru Google's Tensorflow Object Detection API. This requires XML files, which the dataset originally has provided. However, very strange that the API rejects the xml. Troubleshooting script to convert xml_to_csv.  
 - 12July : Morning going for job interview for another company.
-
+- 12July : Back to work. Decided to ditch Google's Tensorflow Object Detection API method. I have an idea.
 
