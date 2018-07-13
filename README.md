@@ -73,6 +73,7 @@ Epoch 150/150
 Epoch 500/500
 73/73 [======================] - 9s 129ms/step - loss: 0.2313 - acc: 0.9097 - val_loss: 4.5684 - val_acc: 0.3021
 ```
+Model2 shows sign of overfitting. I have changed model3, removed several layers, added some dropouts, see if it helps.
 - Train Model 3 : [Juypter: model3](https://github.com/noelcodes/Clothes-recognition/blob/master/model3_upper.ipynb). This categorical model_3 will classify [dress,tee,blouse]. 
 ```
 Epoch 150/150
