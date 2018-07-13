@@ -74,8 +74,12 @@ Epoch 500/500
 73/73 [======================] - 9s 129ms/step - loss: 0.2313 - acc: 0.9097 - val_loss: 4.5684 - val_acc: 0.3021
 ```
 - Train Model 3 : [Juypter: model3](https://github.com/noelcodes/Clothes-recognition/blob/master/model3_upper.ipynb). This categorical model_3 will classify [dress,tee,blouse]. 
+```
+Epoch 150/150
+74/74 [=====================] - 6s 81ms/step - loss: 0.3065 - acc: 0.8824 - val_loss: 4.1002 - val_acc: 0.3524
 
+```
 - Combine_cnn:  [Juypter: combine_cnn](https://github.com/noelcodes/Clothes-recognition/blob/master/combine_cnn.ipynb). Here we will call model1, if new test image classified lower then load model2 to classify if its [jeans, shorts, skirt], else call model_3 to classify [dress,tee,blouse].
-
+![alt text](https://i.imgur.com/jrxKZAz.jpg)
 #### Conclusion
-Hi Ralph, all 3x models did not perform well, therefore have low accuracy. OK, I know the above is a little dumb. If I have experience working on attributes + coding complex CNN, and have enough time for research, I should be able to produce similar result as FashionNet. In the email, I have explained why I had to submit this project now. Hope you understand my situation. Thank you for considering my application. Hope to work with you soon.
+Hi Ralph, all 3x models did not perform well, therefore expected low accuracy. OK, I know the above is a dumb. To improve this, I would classify attributes and landmark, instead of just labels, and train it over Faster-RCNN model for better accuracy. In the email, I have explained why I had to submit this project prematurely, hope you understand my situation. Thank you for considering my application. Hope to work with you soon.
