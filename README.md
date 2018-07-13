@@ -30,7 +30,7 @@ Feel free to come back to us for any further clarification on the assignments. O
 Your assignment ranking will be based on the robustness and generalization of the solution and the thought process behind your approach and implementation.
 ```
 
-## Plan of attack
+### First thought
 I have 1 week to do this. After reading [DeepFashion / FashionNet paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf), I knew a simple CNN and any transfer learning models is NOT going to give any good result. Problem is, First, clothes often have large variations, Second, clothing deforms, Third, clothing images are taken under different scenarios. The solution suggested in FashionNet, which requires several split CNN branches for different attributes then concatenate later. I have not work on multiple attributes on a single label, neither have experience coding complex CNN like the FashionNet. This task is out of my current ability for now. Research over github for fashionNet, none are comprehensive, or claims good accuracy. I have also considered Mask-RCNN, but dataset do not have segmentation annotation. 
 
 Instead of giving up,  I decided to give it a shot using some techniques I know, with a little tweak in order to come close to FashionNet.
@@ -38,7 +38,7 @@ Instead of giving up,  I decided to give it a shot using some techniques I know,
 ### Dataset 
 The given Dataset containes 18438 files (i.e 6146 sets of jpg, xml and txt), all in one folder. The filename is one way to recognize its label. There are 6x classes, [dress,jeans,shorts,skirt,tee,blouse]. XML only has bbox and label, no segmented info. TXT should be for the landmark attribute, but unsure, since no details written. I have tried looking into dataset from [Deepfashion](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/AttributePrediction.html), but arrangement and landmark details are overwhelming. I have not work on multiple attributes on a single labels before, not sure how to fit into Keras layers. 
 
-### My General idea: 
+### Plan of attack
 I will train in total 3x separate model. (1) A binary model to classify 2x classes, [Upper and Lower]. (2) A categorical model for 3x classes [dress, blouse, tee] if model 1 predicts class "Upper'. (3)  A categorical model for 3x classes [jeans, shorts, skirt] if model 1 predicts class "Lower'. (Lastly) A separate notebook to load all 3x model weights, for the conditional prediction mentioned above. Before I start working on the mentioned above, I will just run 1x simple CNN model and 1x VGG16 model over entire dataset, just for baseline. 
 
 
