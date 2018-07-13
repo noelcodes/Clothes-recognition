@@ -78,8 +78,9 @@ Model2 shows sign of overfitting. I have changed model3, removed several layers,
 ```
 Epoch 150/150
 74/74 [=====================] - 6s 81ms/step - loss: 0.3065 - acc: 0.8824 - val_loss: 4.1002 - val_acc: 0.3524
-
 ```
+Modified model on 3 did not help much. I guess a more complex model is needed for this. Or it just might just need to train on attributes instead of label to get better result.
+
 - Combine_cnn:  [Juypter: combine_cnn](https://github.com/noelcodes/Clothes-recognition/blob/master/combine_cnn.ipynb). Here we will call model1, if new test image classified lower then load model2 to classify if its [jeans, shorts, skirt], else call model_3 to classify [dress,tee,blouse].
 ![alt text](https://i.imgur.com/jrxKZAz.jpg)
 ![alt text](https://image.ibb.co/kBszWo/combocnn.jpg)
