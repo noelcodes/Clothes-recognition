@@ -81,6 +81,6 @@ Epoch 150/150
 ```
 - Combine_cnn:  [Juypter: combine_cnn](https://github.com/noelcodes/Clothes-recognition/blob/master/combine_cnn.ipynb). Here we will call model1, if new test image classified lower then load model2 to classify if its [jeans, shorts, skirt], else call model_3 to classify [dress,tee,blouse].
 ![alt text](https://i.imgur.com/jrxKZAz.jpg)
-![alt text](https://ibb.co/iszeWo)
+![alt text](https://image.ibb.co/kBszWo/combocnn.jpg)
 #### Conclusion
 Hi Ralph, all 3x models did not perform well, therefore expected low accuracy. OK, I know the above is a dumb. To improve this, I would classify attributes and landmark, instead of just labels, and train it over Faster-RCNN model for better accuracy. In the email, I have explained why I had to submit this project prematurely, hope you understand my situation. Thank you for considering my application. Hope to work with you soon.
