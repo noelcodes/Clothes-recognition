@@ -30,7 +30,7 @@ Feel free to come back to us for any further clarification on the assignments. O
 Your assignment ranking will be based on the robustness and generalization of the solution and the thought process behind your approach and implementation.
 ```
 
-### First thought
+### Research
 I have 1 week to do this. After reading [DeepFashion / FashionNet paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_DeepFashion_Powering_Robust_CVPR_2016_paper.pdf), I knew a simple CNN and any transfer learning models is NOT going to give any good result. Problem is, First, clothes often have large variations, Second, clothing deforms, Third, clothing images are taken under different scenarios. The solution suggested in FashionNet, which requires several split CNN branches for different attributes then concatenate later. I have not work on multiple attributes on a single label, neither have experience coding complex CNN like the FashionNet. This task is out of my current ability for now. Research over github for fashionNet, none are comprehensive, or claims good accuracy. I have also considered Mask-RCNN, but dataset do not have segmentation annotation. 
 
 Instead of giving up,  I decided to give it a shot using some techniques I know, with a little tweak in order to come close to FashionNet.
